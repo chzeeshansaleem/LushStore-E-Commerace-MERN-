@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      Given an input parameter of a string, find characters that are not
+      repeated more than 2 times, extract them in the same sequence and return
+      if they are pelendrom. Return “notfound” if not. E.g input : “abaacbfcb”
+      here ‘a’ and ‘b’ are repeated more than 2 times. So we will ignore them.
+      However, ‘c’ ‘f’ ‘c’ are not repeated more than 2 times. We will extract
+      them in the sequence and order of the string as “cfc” because it is also a
+      palindrome. So you should return “cfc” as a string. input parameter
+      string: “psxxxszzzpz”. Here “pssp” is the correct answer.
+    </p>
+    <script>
+      let palindrome = "cfc";
+
+      for (let i = 0; i < palindrome.length / 2; i++) {
+        if (palindrome[i] !== palindrome[palindrome - 1 - i]) {
+          console.log("not palindrom");
+        } else {
+          console.log("palindrom");
+        }
+      }
+      // Question 2
+      const arr = [1, 6, 3, 5, 2];
+      let sorted = arr.sort();
+      console.log(sorted);
+      let missedNum = [];
+      for (let i = 0; i < arr.length - 1; i++) {
+        const fark = arr[i + 1] - arr[i];
+        if (fark > 1) {
+          for (let j = 0; j < fark; j++) {
+            missedNum.push(arr[i] + j);
+          }
+          console.log(missedNum);
+        }
+      }
+      // Question 3
+      // array method call
+
+      const arrlargest = [2, 0, 1, 100, 200, 10, 7, 2, 300, 2, 10];
+
+      let sum = 0;
+      let largestSum = arrlargest[0] + arrlargest[1] + arrlargest[2];
+      console.log(largestSum);
+      for (let i = 1; i < arrlargest.length - 2; i++) {
+        sum = arrlargest[i] + arrlargest[i + 1] + arrlargest[i + 2];
+        if (largestSum < sum) {
+          largestSum = sum;
+          console.log(largestSum);
+        }
+      }
+    </script>
+
+    last 4 digit 7289
+  </body>
+</html>
